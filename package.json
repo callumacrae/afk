@@ -1,6 +1,6 @@
 {
   "name": "afk.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JavaScript library to handle user going inactive",
   "main": "index.js",
   "scripts": {
