@@ -18,7 +18,7 @@ afk.on('inactive', function () {
 	console.log('User has become active');
 });
 
-afk.lastActive; // Time the user was last active (or -1)
+afk.lastActive(); // Time the user was last active (or -1)
 afk.isActive(); // Pretty descriptive, returns boolean
 ```
 
