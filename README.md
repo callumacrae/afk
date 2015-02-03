@@ -3,6 +3,9 @@
 A library to tell whether your user is active or not and when they were last
 active.
 
+Relies on jQuery for event emitting: use another library (probably using
+EventEmitter) if your project doesn't already contain jQuery.
+
 ## Install
 
 ```
