@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<span class="indicator"></span>
+
+	<script src="dest/index.js"></script>
+	<script>
+		var indicator = document.querySelector('.indicator');
+
+		afk.on('inactive', function () {
+			indicator.innerHTML = document.title = 'INACTIVE';
+		}).on('active', function () {
+			indicator.innerHTML = document.title = 'ACTIVE';
+		});
+	</script>
+</body>
+</html>
