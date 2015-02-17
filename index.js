@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var watcher = require('visibility')();
+var afterDelay = require('after-delay');
 
 var afk = $({});
 
@@ -16,6 +17,9 @@ afk.config = {
 	visibility: true
 };
 
+var lastActive = -1;
+var isActive;
+
 afk.lastActive = function userLastActive() {
 	return lastActive;
 };
@@ -24,14 +28,10 @@ afk.isActive = function userIsActive() {
 	return isActive;
 };
 
-var lastActive = -1;
-var timeout, isActive;
-
 function active() {
 	lastActive = (new Date()).getTime();
-	clearTimeout(timeout);
 
-	timeout = setTimeout(function () {
+	afterDelay('inactive', function () {
 		inactive();
 	}, afk.config.activeTime);
 
